@@ -9,7 +9,7 @@ variable "map_example" {
 }
 
 output "print_my_list" {
-  value = var.list_example
+  value = sort([for item in var.list_example : upper(item)])
 }
 
 output "print_my_map" {
