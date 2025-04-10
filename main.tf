@@ -1,6 +1,7 @@
 variable "list_example" {
   description = "A list of strings"
-  type        = list(number)
+ # type        = list(number)
+  default = ["1", "2", "3"]
 }
 
 variable "map_example" {
@@ -8,11 +9,8 @@ variable "map_example" {
   type        = map(string)
 }
 
-output "processed_numbers" {
-  value = sort([
-    for n in var.list_example : n * 2
-    if (n * 2) % 2 == 0
-  ])
+output "manipulated_list" {
+  value = sort([for item in var.list_example : upper(item)])
 }
 
 output "print_my_map" {
