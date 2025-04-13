@@ -1,6 +1,6 @@
 variable "list_example" {
   description = "A list of strings"
- # type        = list(number)
+  type        = list(number)
   default = ["1", "2", "3"]
 }
 
